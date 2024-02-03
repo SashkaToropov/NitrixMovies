@@ -22,6 +22,7 @@
 		778ACF632B6E7CB7002536D0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF622B6E7CB7002536D0 /* APICaller.swift */; };
 		778ACF652B6E7D18002536D0 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF642B6E7D18002536D0 /* MovieModel.swift */; };
 		778ACF672B6E7DB1002536D0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF662B6E7DB1002536D0 /* NetworkError.swift */; };
+		778ACF692B6E86CF002536D0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF682B6E86CF002536D0 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		778ACF622B6E7CB7002536D0 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		778ACF642B6E7D18002536D0 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		778ACF662B6E7DB1002536D0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		778ACF682B6E86CF002536D0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		777C72752B6E730F00A86A5B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				778ACF682B6E86CF002536D0 /* Observable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778ACF692B6E86CF002536D0 /* Observable.swift in Sources */,
 				778ACF612B6E7BA4002536D0 /* NetworkConstants.swift in Sources */,
 				777C72642B6D9C2D00A86A5B /* MovieListViewController.swift in Sources */,
 				777C724C2B6D99A000A86A5B /* AppDelegate.swift in Sources */,

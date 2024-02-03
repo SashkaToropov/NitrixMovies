@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkConstants {
+final class NetworkConstants {
     
     public static var shared: NetworkConstants = NetworkConstants()
     
