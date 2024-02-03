@@ -19,7 +19,7 @@ class TabBarController: UITabBarController {
     
     private func setupTabs() {
         let movieListViewController = self.createNavigationController(viewController: MovieListViewController(), title: "Movies", image: UIImage(systemName: "movieclapper"))
-        let favoriteViewController = self.createNavigationController(viewController: FavoriteViewController(), title: "Favorite", image: UIImage(systemName: "star"))
+        let favoriteViewController = self.createNavigationController(viewController: FavoritesViewController(), title: "Favorites", image: UIImage(systemName: "star"))
         
         self.setViewControllers([movieListViewController, favoriteViewController], animated: true)
     }
