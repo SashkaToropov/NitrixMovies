@@ -1,26 +1,31 @@
 //
-//  MovieListViewController.swift
+//  MovieListViewController+TableView.swift
 //  NitrixMovies
 //
-//  Created by  Toropov Oleksandr on 02.02.2024.
+//  Created by  Toropov Oleksandr on 03.02.2024.
 //
 
 import UIKit
 
-class MovieListViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .green
-        tableView.dataSource = self
-        tableView.delegate = self
-        
+extension MovieListViewController {
+    
+    func setupTableView() {
+        self.tableView.backgroundColor = .green
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.registerCells()
+    }
+    
+    func registerCells() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfSections()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        viewModel.numberOfRows(in: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
