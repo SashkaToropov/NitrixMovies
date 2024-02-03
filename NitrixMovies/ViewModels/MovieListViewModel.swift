@@ -16,4 +16,15 @@ class MovieListViewModel {
     func numberOfRows(in section: Int) -> Int {
         10
     }
+    
+    func getData() {
+        APICaller.getMovies { result in
+            switch result {
+            case .success(let data):
+                print("Count: \(data.results.count))")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

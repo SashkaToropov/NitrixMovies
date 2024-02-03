@@ -18,6 +18,10 @@
 		777C726C2B6DB65300A86A5B /* MovieListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 777C726B2B6DB65300A86A5B /* MovieListViewController.storyboard */; };
 		777C727D2B6E754600A86A5B /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C727C2B6E754600A86A5B /* MovieListViewModel.swift */; };
 		778ACF5F2B6E7747002536D0 /* MovieListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF5E2B6E7747002536D0 /* MovieListViewController+TableView.swift */; };
+		778ACF612B6E7BA4002536D0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF602B6E7BA4002536D0 /* NetworkConstants.swift */; };
+		778ACF632B6E7CB7002536D0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF622B6E7CB7002536D0 /* APICaller.swift */; };
+		778ACF652B6E7D18002536D0 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF642B6E7D18002536D0 /* MovieModel.swift */; };
+		778ACF672B6E7DB1002536D0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778ACF662B6E7DB1002536D0 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		777C726B2B6DB65300A86A5B /* MovieListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieListViewController.storyboard; sourceTree = "<group>"; };
 		777C727C2B6E754600A86A5B /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		778ACF5E2B6E7747002536D0 /* MovieListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListViewController+TableView.swift"; sourceTree = "<group>"; };
+		778ACF602B6E7BA4002536D0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		778ACF622B6E7CB7002536D0 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		778ACF642B6E7D18002536D0 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		778ACF662B6E7DB1002536D0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 		777C72782B6E733600A86A5B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				778ACF642B6E7D18002536D0 /* MovieModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +136,9 @@
 		777C72792B6E734000A86A5B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				778ACF602B6E7BA4002536D0 /* NetworkConstants.swift */,
+				778ACF622B6E7CB7002536D0 /* APICaller.swift */,
+				778ACF662B6E7DB1002536D0 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -217,12 +229,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778ACF612B6E7BA4002536D0 /* NetworkConstants.swift in Sources */,
 				777C72642B6D9C2D00A86A5B /* MovieListViewController.swift in Sources */,
 				777C724C2B6D99A000A86A5B /* AppDelegate.swift in Sources */,
+				778ACF632B6E7CB7002536D0 /* APICaller.swift in Sources */,
 				777C72562B6D99A000A86A5B /* NitrixMovies.xcdatamodeld in Sources */,
 				778ACF5F2B6E7747002536D0 /* MovieListViewController+TableView.swift in Sources */,
 				777C727D2B6E754600A86A5B /* MovieListViewModel.swift in Sources */,
 				777C72682B6D9CFC00A86A5B /* TabBarController.swift in Sources */,
+				778ACF652B6E7D18002536D0 /* MovieModel.swift in Sources */,
+				778ACF672B6E7DB1002536D0 /* NetworkError.swift in Sources */,
 				777C72662B6D9C8600A86A5B /* FavoritesViewController.swift in Sources */,
 				777C724E2B6D99A000A86A5B /* SceneDelegate.swift in Sources */,
 			);

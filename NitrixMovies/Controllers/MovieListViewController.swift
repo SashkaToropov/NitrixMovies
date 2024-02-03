@@ -15,4 +15,8 @@ class MovieListViewController: UITableViewController {
         super.viewDidLoad()
         setupTableView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.getData()
+    }
 }
