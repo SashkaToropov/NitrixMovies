@@ -28,6 +28,8 @@ final class TabBarController: UITabBarController {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = title
         navigationController.tabBarItem.image = image
+        
+        navigationController.viewControllers.first?.navigationItem.setTitle(title: "\(title)", subtitle: "Long Pressure on cell to make it favorite⭐️")
         return navigationController
     }
 }

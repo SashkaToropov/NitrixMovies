@@ -11,35 +11,37 @@ final class MovieListViewController: UIViewController {
     
     var viewModel = MovieListViewModel()
     
-    var cellDataSource: [Movie] = []
+    var cellDataSource: [MovieListCellViewModel] = []
     
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.style = .large
         return activityIndicator
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
-        view.addSubview(tableView)
-        view.addSubview(activityIndicator)
-        
-        setupTableView()
+        setupViews()
         setConstraints()
         bindViewModel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.getData()
+    }
+    
+    func setupViews() {
+        view.backgroundColor = .white
+        
+        view.addSubview(tableView)
+        view.addSubview(activityIndicator)
+        setupTableView()
     }
     
     func bindViewModel() {
@@ -61,6 +63,11 @@ final class MovieListViewController: UIViewController {
 private extension MovieListViewController {
     
     private func setConstraints() {
+        
+        [tableView, activityIndicator].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

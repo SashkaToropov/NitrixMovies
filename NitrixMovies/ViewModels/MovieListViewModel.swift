@@ -10,7 +10,7 @@ import Foundation
 class MovieListViewModel {
     
     var isLoading: Observable<Bool> = Observable(false)
-    var cellDataSource: Observable<[Movie]> = Observable([])
+    var cellDataSource: Observable<[MovieListCellViewModel]> = Observable([])
     var dataSource: MovieModel?
     
     func numberOfSections() -> Int {
@@ -19,6 +19,10 @@ class MovieListViewModel {
     
     func numberOfRows(in section: Int) -> Int {
         self.dataSource?.results.count ?? 0
+    }
+    
+    func heightForRow(at indexPath: IndexPath) -> CGFloat {
+        150
     }
     
     func getData() {
@@ -41,6 +45,6 @@ class MovieListViewModel {
     }
     
     func mapCellData() {
-        self.cellDataSource.value = self.dataSource?.results ?? []
+        self.cellDataSource.value = self.dataSource?.results.compactMap { MovieListCellViewModel(movie: $0) } 
     }
 }

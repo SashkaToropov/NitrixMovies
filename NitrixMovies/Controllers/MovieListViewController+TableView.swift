@@ -18,7 +18,7 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func registerCells() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(MovieListCell.self, forCellReuseIdentifier: MovieListCell.cellIdentifier)
     }
     
     func reloadTableView() {
@@ -35,9 +35,19 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         viewModel.numberOfRows(in: section)
     }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        viewModel.heightForRow(at: indexPath)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = self.cellDataSource[indexPath.row].title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieListCell.cellIdentifier,
+                                                       for: indexPath) as? MovieListCell else {
+              return UITableViewCell()
+          }
+        
+        let cellViewModel = cellDataSource[indexPath.row]
+        cell.setupCell(viewModel: cellViewModel)
         return cell
     }
 }
