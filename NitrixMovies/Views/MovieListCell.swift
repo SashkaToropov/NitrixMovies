@@ -16,33 +16,29 @@ final class MovieListCell: UITableViewCell {
     
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        return label
-    }()
-    
-    private lazy var dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
     private lazy var ratingLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(ratingLabel)
         addSubview(posterImageView)
         addSubview(titleLabel)
-        addSubview(dateLabel)
+        addSubview(ratingLabel)
         setConstraints()
     }
     
@@ -52,8 +48,7 @@ final class MovieListCell: UITableViewCell {
     
     func setupCell(viewModel: MovieListCellViewModel) {
         self.titleLabel.text = viewModel.title
-        self.dateLabel.text = "\(viewModel.date.formatted())"
-        self.ratingLabel.text = viewModel.rating
+        self.ratingLabel.text = "📊\(viewModel.rating ?? "No rating")"
         self.posterImageView.sd_setImage(with: viewModel.imageURL)
     }
 }
@@ -62,7 +57,7 @@ extension MovieListCell {
     
     func setConstraints() {
         
-        [posterImageView, titleLabel, dateLabel, ratingLabel].forEach {
+        [posterImageView, titleLabel, ratingLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -76,13 +71,9 @@ extension MovieListCell {
             titleLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             
-            dateLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: -45),
-            dateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            dateLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            
             ratingLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             ratingLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            ratingLabel.bottomAnchor.constraint(equalTo: posterImageView.bottomAnchor),
+            ratingLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
         ])
     }
 }
