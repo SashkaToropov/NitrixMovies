@@ -65,7 +65,7 @@ class DetailsMovieViewController: UIViewController {
         self.title = viewModel.movieTitle
         titleLabel.text = viewModel.movieTitle
         descriptionLabel.text = viewModel.movieDescription
-        dateLabel.text = String(describing: viewModel.movieDate.formatted())
+        dateLabel.text = "🗓️\(String(describing: viewModel.movieDate.formatted()))"
         movieImageView.sd_setImage(with: viewModel.movieImage)
     }
 
@@ -80,6 +80,7 @@ extension DetailsMovieViewController {
         movieImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
         movieImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
         movieImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+        movieImageView.heightAnchor.constraint(equalTo: movieImageView.widthAnchor, multiplier: 0.65),
         
         titleLabel.topAnchor.constraint(equalTo: movieImageView.bottomAnchor, constant: 8),
 //        titleLabel.leadingAnchor.constraint(equalTo: movieImageView.leadingAnchor),
