@@ -50,4 +50,9 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(viewModel: cellViewModel)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let dataSource = viewModel.dataSource else { return }
+        presentDetailsViewController(movie: dataSource.results[indexPath.row])
+    }
 }

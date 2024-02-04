@@ -58,7 +58,12 @@ final class MovieListViewController: UIViewController {
             self.reloadTableView()
         }
     }
-}
+    
+    func presentDetailsViewController(movie: Movie) {
+        let detailsViewModel = DetailsMovieViewModel(movie: movie)
+        let detailsViewController = DetailsMovieViewController(viewModel: detailsViewModel)
+        navigationController?.pushViewController(detailsViewController, animated: true)
+    }}
 
 private extension MovieListViewController {
     

@@ -15,6 +15,8 @@
 		776454E72B6FBE260092B895 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454E62B6FBE260092B895 /* DateFormatter+Extension.swift */; };
 		776454E92B6FC2250092B895 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454E82B6FC2250092B895 /* String+Extension.swift */; };
 		776454EB2B6FC43D0092B895 /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454EA2B6FC43D0092B895 /* UINavigationItem+Extension.swift */; };
+		776454EE2B6FE4240092B895 /* DetailsMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */; };
+		776454F02B6FE65C0092B895 /* DetailsMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454EF2B6FE65C0092B895 /* DetailsMovieViewModel.swift */; };
 		777C724C2B6D99A000A86A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C724B2B6D99A000A86A5B /* AppDelegate.swift */; };
 		777C724E2B6D99A000A86A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C724D2B6D99A000A86A5B /* SceneDelegate.swift */; };
 		777C72562B6D99A000A86A5B /* NitrixMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 777C72542B6D99A000A86A5B /* NitrixMovies.xcdatamodeld */; };
@@ -39,6 +41,8 @@
 		776454E62B6FBE260092B895 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		776454E82B6FC2250092B895 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		776454EA2B6FC43D0092B895 /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
+		776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieViewController.swift; sourceTree = "<group>"; };
+		776454EF2B6FE65C0092B895 /* DetailsMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieViewModel.swift; sourceTree = "<group>"; };
 		777C72482B6D99A000A86A5B /* NitrixMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NitrixMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777C724B2B6D99A000A86A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		777C724D2B6D99A000A86A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		776454EC2B6FE3CB0092B895 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				777C72632B6D9C2D00A86A5B /* MovieListViewController.swift */,
+				778ACF5E2B6E7747002536D0 /* MovieListViewController+TableView.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
 		777C723F2B6D99A000A86A5B = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +138,10 @@
 		777C72762B6E732200A86A5B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				776454EC2B6FE3CB0092B895 /* MovieList */,
 				777C72652B6D9C8600A86A5B /* FavoritesViewController.swift */,
 				777C72672B6D9CFC00A86A5B /* TabBarController.swift */,
-				777C72632B6D9C2D00A86A5B /* MovieListViewController.swift */,
-				778ACF5E2B6E7747002536D0 /* MovieListViewController+TableView.swift */,
+				776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 			children = (
 				777C727C2B6E754600A86A5B /* MovieListViewModel.swift */,
 				776454DB2B6FA15E0092B895 /* MovieListCellViewModel.swift */,
+				776454EF2B6FE65C0092B895 /* DetailsMovieViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,7 +278,9 @@
 				776454E92B6FC2250092B895 /* String+Extension.swift in Sources */,
 				778ACF632B6E7CB7002536D0 /* APICaller.swift in Sources */,
 				777C72562B6D99A000A86A5B /* NitrixMovies.xcdatamodeld in Sources */,
+				776454F02B6FE65C0092B895 /* DetailsMovieViewModel.swift in Sources */,
 				778ACF5F2B6E7747002536D0 /* MovieListViewController+TableView.swift in Sources */,
+				776454EE2B6FE4240092B895 /* DetailsMovieViewController.swift in Sources */,
 				777C727D2B6E754600A86A5B /* MovieListViewModel.swift in Sources */,
 				776454E52B6FBDD30092B895 /* Date+Extension.swift in Sources */,
 				776454EB2B6FC43D0092B895 /* UINavigationItem+Extension.swift in Sources */,

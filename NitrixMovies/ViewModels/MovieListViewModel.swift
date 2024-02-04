@@ -35,7 +35,6 @@ class MovieListViewModel {
             self?.isLoading.value = false
             switch result {
             case .success(let data):
-                print("Count: \(data.results.count))")
                 self?.dataSource = data
                 self?.mapCellData()
             case .failure(let error):
