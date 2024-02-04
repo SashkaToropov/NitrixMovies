@@ -41,7 +41,7 @@ class MovieListViewModel {
                 print(error.localizedDescription)
             }
         }
-    }
+    } 
     
     func mapCellData() {
         self.cellDataSource.value = self.dataSource?.results.compactMap { MovieListCellViewModel(movie: $0) } 

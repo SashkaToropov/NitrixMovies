@@ -12,11 +12,15 @@ class MovieListCellViewModel {
     var id: Int
     var title: String
     var rating: String?
+    var date: Date
+    var genreIds: [Int]
     var imageURL: URL?
     
     init(movie: Movie) {
         self.id = movie.id
         self.title = movie.title
+        self.date = movie.releaseDate.convertToDate()
+        self.genreIds = movie.genreIDS
         self.rating = "\(calculateRoundedRating(from: movie.voteAverage))/10"
         self.imageURL = makeImageURL(movie.posterPath)
     }

@@ -32,4 +32,37 @@ final class APICaller {
             }
         }.resume()
     }
+    
+    static func getGenreName(for genreIds: [Int], completion: @escaping ([String]?) -> Void) {
+           let urlString = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + NetworkConstants.shared.apiKey
+           
+        guard let url = URL(string: urlString) else {
+             completion(nil)
+             return
+         }
+
+         URLSession.shared.dataTask(with: url) { (data, response, error) in
+             if let error = error {
+                 print("Error fetching genre data: \(error)")
+                 completion(nil)
+                 return
+             }
+
+             guard let data = data else {
+                 completion(nil)
+                 return
+             }
+
+             do {
+                 let movieGenres = try JSONDecoder().decode(MovieGenres.self, from: data)
+                 let genreNames = genreIds.compactMap { genreId in
+                     movieGenres.genres.first { $0.id == genreId }?.name
+                 }
+                 completion(genreNames)
+             } catch {
+                 print("Error decoding genre data: \(error)")
+                 completion(nil)
+             }
+         }.resume()
+       }
 }
