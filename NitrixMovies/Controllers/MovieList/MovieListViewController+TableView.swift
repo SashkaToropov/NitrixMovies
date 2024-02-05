@@ -10,7 +10,7 @@ import UIKit
 extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func setupTableView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         self.tableView.backgroundColor = .clear
         self.tableView.dataSource = self
         self.tableView.delegate = self
