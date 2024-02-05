@@ -49,7 +49,7 @@ class DetailsFavoriteViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(titleLabel)
         view.addSubview(genresLabel)
         view.addSubview(dateLabel)

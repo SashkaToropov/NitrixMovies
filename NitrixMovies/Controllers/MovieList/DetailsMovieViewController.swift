@@ -56,7 +56,7 @@ final class DetailsMovieViewController: UIViewController {
     }
     
     func configureView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(movieImageView)
         view.addSubview(titleLabel)
         view.addSubview(descriptionLabel)
