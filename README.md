@@ -18,7 +18,7 @@
 
 2. **Movie Details:** When a user selects a movie from the list, the application navigates to a detailed movie screen. This screen provides more information about the movie, like its synopsis, rating, release date, and more.
 
-3. **Favorite Movies:** Users have the option to favorite movies. This action can be performed from the details screen. Favorited movies are stored locally and can be viewed from the "Favorites" tab.
+3. **Favorite Movies:** Users have the option to favorite movies. This action can be performed from the movie list screen. Favorited movies are stored locally and can be viewed from the "Favorites" tab.
 
 4. **Tabbed Navigation:** The application uses a tabbed navigation structure. There are mainly two tabs - "Movies" and "Favorites". The "Movies" tab shows the list of all movies, whereas the "Favorites" tab shows the user's favorite movies.
 
