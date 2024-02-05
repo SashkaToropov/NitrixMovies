@@ -34,7 +34,7 @@ final class APICaller {
     }
     
     static func getGenreName(for genreIds: [Int], completion: @escaping ([String]?) -> Void) {
-           let urlString = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + NetworkConstants.shared.apiKey
+           let urlString = NetworkConstants.shared.serverAddress + "/genre/movie/list?api_key=" + NetworkConstants.shared.apiKey
            
         guard let url = URL(string: urlString) else {
              completion(nil)
