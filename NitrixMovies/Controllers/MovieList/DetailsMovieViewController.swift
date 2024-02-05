@@ -85,8 +85,6 @@ extension DetailsMovieViewController {
         movieImageView.heightAnchor.constraint(equalTo: movieImageView.widthAnchor, multiplier: 0.65),
         
         titleLabel.topAnchor.constraint(equalTo: movieImageView.bottomAnchor, constant: 8),
-//        titleLabel.leadingAnchor.constraint(equalTo: movieImageView.leadingAnchor),
-//        titleLabel.trailingAnchor.constraint(equalTo: movieImageView.trailingAnchor),
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),

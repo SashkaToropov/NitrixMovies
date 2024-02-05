@@ -52,7 +52,7 @@
 		776454F22B7013770092B895 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		776454F62B702A930092B895 /* MovieGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenre.swift; sourceTree = "<group>"; };
 		776454FC2B7032C80092B895 /* FavoritesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+TableView.swift"; sourceTree = "<group>"; };
-		776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsFavoriteViewController.swift; path = NitrixMovies/Controllers/DetailsFavoriteViewController.swift; sourceTree = SOURCE_ROOT; };
+		776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsFavoriteViewController.swift; path = NitrixMovies/Controllers/Favorites/DetailsFavoriteViewController.swift; sourceTree = SOURCE_ROOT; };
 		776455012B70D7990092B895 /* DetailsFavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFavoriteViewModel.swift; sourceTree = "<group>"; };
 		776455032B70E4A00092B895 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		777C72482B6D99A000A86A5B /* NitrixMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NitrixMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +92,7 @@
 			children = (
 				777C72632B6D9C2D00A86A5B /* MovieListViewController.swift */,
 				778ACF5E2B6E7747002536D0 /* MovieListViewController+TableView.swift */,
+				776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 				776454FE2B7032DB0092B895 /* Favorites */,
 				776454EC2B6FE3CB0092B895 /* MovieList */,
 				777C72672B6D9CFC00A86A5B /* TabBarController.swift */,
-				776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

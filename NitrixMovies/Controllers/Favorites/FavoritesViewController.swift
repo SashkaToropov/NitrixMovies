@@ -87,9 +87,7 @@ private extension FavoritesViewController {
     
     private func setConstraints() {
         
-        [tableView].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+            tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

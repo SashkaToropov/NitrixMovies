@@ -94,7 +94,6 @@ final class MovieListViewController: UIViewController {
                         favoriteMovie.title = movie.title
                         favoriteMovie.genre = genreNames.joined(separator: ", ")
                         favoriteMovie.date = movie.date
-                        print(favoriteMovie.title)
                         self.dbService.saveContext()
                         
                         let ac = UIAlertController(title: "Movie added to favorites✅", message: nil, preferredStyle: .alert)
@@ -102,6 +101,10 @@ final class MovieListViewController: UIViewController {
                         self.present(ac, animated: true)
                     }
                 }
+            } else {
+                let ac = UIAlertController(title: "Do not repeat yourself😄", message: nil, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac, animated: true)
             }
         }
     }
