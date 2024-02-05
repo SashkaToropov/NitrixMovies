@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieListViewModel {
+final class MovieListViewModel {
     
     var isLoading: Observable<Bool> = Observable(false)
     var cellDataSource: Observable<[MovieListCellViewModel]> = Observable([])

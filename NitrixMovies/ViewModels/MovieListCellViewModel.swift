@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieListCellViewModel {
+final class MovieListCellViewModel {
     
     var id: Int
     var title: String

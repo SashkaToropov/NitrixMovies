@@ -61,12 +61,13 @@ final class FavoritesViewController: UIViewController {
         let gestureLocation = longPressGesture.location(in: self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: gestureLocation)
         if longPressGesture.state == UIGestureRecognizer.State.began {
-            let movie = favoriteMovies[indexPath!.row]
+            guard let indexPath = indexPath else { return }
+            let movie = favoriteMovies[indexPath.row]
                     
                     
                     DispatchQueue.main.async {
                         self.dbService.context.delete(movie)
-                        self.favoriteMovies.remove(at: indexPath!.row)
+                        self.favoriteMovies.remove(at: indexPath.row)
                         self.tableView.reloadData()
                         self.dbService.saveContext()
                         let ac = UIAlertController(title: "Movie deleted from favorites😟", message: nil, preferredStyle: .alert)

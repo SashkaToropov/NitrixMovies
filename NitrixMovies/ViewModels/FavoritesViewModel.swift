@@ -7,10 +7,8 @@
 
 import Foundation
 
-class FavoritesViewModel {
-    
-    let favoriteMovies: [FavoriteMovie] = []
-    
+final class FavoritesViewModel {
+        
     func numberOfSections() -> Int {
         1
     }

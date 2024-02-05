@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class DetailsMovieViewController: UIViewController {
+final class DetailsMovieViewController: UIViewController {
     
     var viewModel: DetailsMovieViewModel
     

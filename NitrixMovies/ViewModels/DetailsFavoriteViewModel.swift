@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DetailsFavoriteViewModel {
+final class DetailsFavoriteViewModel {
     
     let favoriteMovie: FavoriteMovie
 

@@ -7,7 +7,7 @@
 
 import CoreData
 
-class DBService {
+final class DBService {
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "NitrixMovies")

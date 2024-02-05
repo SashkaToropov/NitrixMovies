@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DetailsMovieViewModel {
+final class DetailsMovieViewModel {
          
     var movieImage: URL?
     var movieTitle: String
