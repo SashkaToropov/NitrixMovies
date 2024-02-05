@@ -8,12 +8,13 @@
 import UIKit
 
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
-    
+        
     func setupTableView() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         self.tableView.backgroundColor = .clear
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.addGestureRecognizer(longPressGesture)
         self.registerCells()
     }
     
@@ -21,16 +22,17 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteMovies.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfSections()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        favoriteMovies.count
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        viewModel.heightForRow(at: indexPath)
     }
     
     func reloadTableView() {
@@ -44,5 +46,9 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = favoriteMovies[indexPath.row].title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presentDetailsViewController(favoriteMovie: favoriteMovies[indexPath.row])
     }
 }

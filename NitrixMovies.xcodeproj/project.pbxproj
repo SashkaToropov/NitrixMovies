@@ -18,10 +18,11 @@
 		776454EE2B6FE4240092B895 /* DetailsMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */; };
 		776454F02B6FE65C0092B895 /* DetailsMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454EF2B6FE65C0092B895 /* DetailsMovieViewModel.swift */; };
 		776454F32B7013770092B895 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454F22B7013770092B895 /* DBService.swift */; };
-		776454F52B7023C30092B895 /* FavoriteMovie+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454F42B7023C30092B895 /* FavoriteMovie+Extension.swift */; };
 		776454F72B702A930092B895 /* MovieGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454F62B702A930092B895 /* MovieGenre.swift */; };
-		776454FB2B7030990092B895 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454FA2B7030990092B895 /* FavoriteViewModel.swift */; };
 		776454FD2B7032C80092B895 /* FavoritesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454FC2B7032C80092B895 /* FavoritesViewController+TableView.swift */; };
+		776455002B70D3EB0092B895 /* DetailsFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */; };
+		776455022B70D7990092B895 /* DetailsFavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776455012B70D7990092B895 /* DetailsFavoriteViewModel.swift */; };
+		776455042B70E4A00092B895 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776455032B70E4A00092B895 /* FavoritesViewModel.swift */; };
 		777C724C2B6D99A000A86A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C724B2B6D99A000A86A5B /* AppDelegate.swift */; };
 		777C724E2B6D99A000A86A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C724D2B6D99A000A86A5B /* SceneDelegate.swift */; };
 		777C72562B6D99A000A86A5B /* NitrixMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 777C72542B6D99A000A86A5B /* NitrixMovies.xcdatamodeld */; };
@@ -49,10 +50,11 @@
 		776454ED2B6FE4240092B895 /* DetailsMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieViewController.swift; sourceTree = "<group>"; };
 		776454EF2B6FE65C0092B895 /* DetailsMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieViewModel.swift; sourceTree = "<group>"; };
 		776454F22B7013770092B895 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
-		776454F42B7023C30092B895 /* FavoriteMovie+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteMovie+Extension.swift"; sourceTree = "<group>"; };
 		776454F62B702A930092B895 /* MovieGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenre.swift; sourceTree = "<group>"; };
-		776454FA2B7030990092B895 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		776454FC2B7032C80092B895 /* FavoritesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesViewController+TableView.swift"; sourceTree = "<group>"; };
+		776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsFavoriteViewController.swift; path = NitrixMovies/Controllers/DetailsFavoriteViewController.swift; sourceTree = SOURCE_ROOT; };
+		776455012B70D7990092B895 /* DetailsFavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFavoriteViewModel.swift; sourceTree = "<group>"; };
+		776455032B70E4A00092B895 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		777C72482B6D99A000A86A5B /* NitrixMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NitrixMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777C724B2B6D99A000A86A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		777C724D2B6D99A000A86A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +101,6 @@
 			children = (
 				777C72542B6D99A000A86A5B /* NitrixMovies.xcdatamodeld */,
 				776454F22B7013770092B895 /* DBService.swift */,
-				776454F42B7023C30092B895 /* FavoriteMovie+Extension.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -109,6 +110,7 @@
 			children = (
 				777C72652B6D9C8600A86A5B /* FavoritesViewController.swift */,
 				776454FC2B7032C80092B895 /* FavoritesViewController+TableView.swift */,
+				776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -211,7 +213,8 @@
 				777C727C2B6E754600A86A5B /* MovieListViewModel.swift */,
 				776454DB2B6FA15E0092B895 /* MovieListCellViewModel.swift */,
 				776454EF2B6FE65C0092B895 /* DetailsMovieViewModel.swift */,
-				776454FA2B7030990092B895 /* FavoriteViewModel.swift */,
+				776455012B70D7990092B895 /* DetailsFavoriteViewModel.swift */,
+				776455032B70E4A00092B895 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -306,16 +309,16 @@
 				778ACF612B6E7BA4002536D0 /* NetworkConstants.swift in Sources */,
 				777C72642B6D9C2D00A86A5B /* MovieListViewController.swift in Sources */,
 				777C724C2B6D99A000A86A5B /* AppDelegate.swift in Sources */,
+				776455022B70D7990092B895 /* DetailsFavoriteViewModel.swift in Sources */,
 				776454FD2B7032C80092B895 /* FavoritesViewController+TableView.swift in Sources */,
 				776454F72B702A930092B895 /* MovieGenre.swift in Sources */,
 				776454E92B6FC2250092B895 /* String+Extension.swift in Sources */,
 				778ACF632B6E7CB7002536D0 /* APICaller.swift in Sources */,
-				776454F52B7023C30092B895 /* FavoriteMovie+Extension.swift in Sources */,
 				777C72562B6D99A000A86A5B /* NitrixMovies.xcdatamodeld in Sources */,
 				776454F32B7013770092B895 /* DBService.swift in Sources */,
 				776454F02B6FE65C0092B895 /* DetailsMovieViewModel.swift in Sources */,
 				778ACF5F2B6E7747002536D0 /* MovieListViewController+TableView.swift in Sources */,
-				776454FB2B7030990092B895 /* FavoriteViewModel.swift in Sources */,
+				776455002B70D3EB0092B895 /* DetailsFavoriteViewController.swift in Sources */,
 				776454EE2B6FE4240092B895 /* DetailsMovieViewController.swift in Sources */,
 				777C727D2B6E754600A86A5B /* MovieListViewModel.swift in Sources */,
 				776454E52B6FBDD30092B895 /* Date+Extension.swift in Sources */,
@@ -323,6 +326,7 @@
 				777C72682B6D9CFC00A86A5B /* TabBarController.swift in Sources */,
 				776454DC2B6FA15E0092B895 /* MovieListCellViewModel.swift in Sources */,
 				778ACF652B6E7D18002536D0 /* MovieModel.swift in Sources */,
+				776455042B70E4A00092B895 /* FavoritesViewModel.swift in Sources */,
 				778ACF672B6E7DB1002536D0 /* NetworkError.swift in Sources */,
 				776454E72B6FBE260092B895 /* DateFormatter+Extension.swift in Sources */,
 				777C72662B6D9C8600A86A5B /* FavoritesViewController.swift in Sources */,

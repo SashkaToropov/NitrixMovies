@@ -81,7 +81,7 @@ final class MovieListViewController: UIViewController {
         if longPressGesture.state == UIGestureRecognizer.State.began {
             let movie = cellDataSource[indexPath!.row]
             
-            if !isMovieAlreadyFavorite(movie: movie) {
+            if !dbService.isMovieAlreadyFavorite(movie: movie) {
                 
                 APICaller.getGenreName(for: movie.genreIds) { genreNames in
                     guard let genreNames = genreNames else {
@@ -92,28 +92,17 @@ final class MovieListViewController: UIViewController {
                     DispatchQueue.main.async {
                         let favoriteMovie = FavoriteMovie(context: self.dbService.context)
                         favoriteMovie.title = movie.title
-                        movie.imageURL
                         favoriteMovie.genre = genreNames.joined(separator: ", ")
                         favoriteMovie.date = movie.date
-                        print(favoriteMovie.genre)
+                        print(favoriteMovie.title)
                         self.dbService.saveContext()
+                        
+                        let ac = UIAlertController(title: "Movie added to favorites✅", message: nil, preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(ac, animated: true)
                     }
                 }
             }
-        }
-    }
-    
-    private func isMovieAlreadyFavorite(movie: MovieListCellViewModel) -> Bool {
-        // Fetch existing FavoriteMovie entities with the same title
-        let fetchRequest: NSFetchRequest<FavoriteMovie> = FavoriteMovie.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "title == %@", movie.title)
-        
-        do {
-            let existingMovies = try self.dbService.context.fetch(fetchRequest)
-            return !existingMovies.isEmpty
-        } catch {
-            print("Error checking for existing movies: \(error)")
-            return false
         }
     }
 }

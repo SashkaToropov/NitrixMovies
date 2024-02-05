@@ -72,10 +72,12 @@ class DetailsMovieViewController: UIViewController {
 }
 
 extension DetailsMovieViewController {
+    
     func setConstraints() {
         [movieImageView, titleLabel, descriptionLabel, dateLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+        
         NSLayoutConstraint.activate([
         movieImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
         movieImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),

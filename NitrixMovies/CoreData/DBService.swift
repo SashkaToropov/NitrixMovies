@@ -33,4 +33,17 @@ class DBService {
             }
         }
     }
+    
+    func isMovieAlreadyFavorite(movie: MovieListCellViewModel) -> Bool {
+        let fetchRequest: NSFetchRequest<FavoriteMovie> = FavoriteMovie.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title == %@", movie.title)
+        
+        do {
+            let existingMovies = try self.context.fetch(fetchRequest)
+            return !existingMovies.isEmpty
+        } catch {
+            print("Error checking for existing movies: \(error)")
+            return false
+        }
+    }
 }

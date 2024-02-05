@@ -5,6 +5,7 @@
 //  Created by  Toropov Oleksandr on 02.02.2024.
 //
 
+
 import UIKit
 import CoreData
 
@@ -12,27 +13,36 @@ final class FavoritesViewController: UIViewController {
     
     let dbService = DBService()
     var favoriteMovies: [FavoriteMovie] = []
-    var viewModel = MovieListViewModel()
-    var cellDataSource: [MovieListCellViewModel] = []
+    let viewModel = FavoritesViewModel()
+
 
     
     let tableView: UITableView = {
         let tableView = UITableView()
         return tableView
     }()
+    
+    lazy var longPressGesture: UILongPressGestureRecognizer = {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        longPress.minimumPressDuration = 0.5
+        return longPress
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
+        configureViews()
         setConstraints()
-        fetchData()
-        view.backgroundColor = .yellow
-        setupTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         fetchData()
         tableView.reloadData()
+    }
+    
+    func configureViews() {
+        view.addSubview(tableView)
+        setupTableView()
+        fetchData()
     }
     
     func fetchData() {
@@ -45,7 +55,31 @@ final class FavoritesViewController: UIViewController {
         } catch {
             print("Error fetching data from CoreData: \(error.localizedDescription)")
         }
-        
+    }
+    
+    @objc func handleLongPress() {
+        let gestureLocation = longPressGesture.location(in: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: gestureLocation)
+        if longPressGesture.state == UIGestureRecognizer.State.began {
+            let movie = favoriteMovies[indexPath!.row]
+                    
+                    
+                    DispatchQueue.main.async {
+                        self.dbService.context.delete(movie)
+                        self.favoriteMovies.remove(at: indexPath!.row)
+                        self.tableView.reloadData()
+                        self.dbService.saveContext()
+                        let ac = UIAlertController(title: "Movie deleted from favorites😟", message: nil, preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(ac, animated: true)
+                    }
+                }
+            }
+    
+    func presentDetailsViewController(favoriteMovie: FavoriteMovie) {
+        let detailsViewModel = DetailsFavoriteViewModel(favoriteMovie: favoriteMovie)
+        let detailsViewController = DetailsFavoriteViewController(viewModel: detailsViewModel)
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
 
