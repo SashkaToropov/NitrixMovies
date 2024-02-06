@@ -9,5 +9,7 @@ import Foundation
 
 enum NetworkError: Error {
     case urlError
-    case canNotParseData
+    case networkError(Error)
+    case noData
+    case decodingError(Error)
 }

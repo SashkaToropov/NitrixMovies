@@ -23,6 +23,7 @@
 		776455002B70D3EB0092B895 /* DetailsFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */; };
 		776455022B70D7990092B895 /* DetailsFavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776455012B70D7990092B895 /* DetailsFavoriteViewModel.swift */; };
 		776455042B70E4A00092B895 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776455032B70E4A00092B895 /* FavoritesViewModel.swift */; };
+		776455062B723DC20092B895 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776455052B723DC20092B895 /* EndPoint.swift */; };
 		777C724C2B6D99A000A86A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C724B2B6D99A000A86A5B /* AppDelegate.swift */; };
 		777C724E2B6D99A000A86A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777C724D2B6D99A000A86A5B /* SceneDelegate.swift */; };
 		777C72562B6D99A000A86A5B /* NitrixMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 777C72542B6D99A000A86A5B /* NitrixMovies.xcdatamodeld */; };
@@ -55,6 +56,7 @@
 		776454FF2B70D3EB0092B895 /* DetailsFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsFavoriteViewController.swift; path = NitrixMovies/Controllers/Favorites/DetailsFavoriteViewController.swift; sourceTree = SOURCE_ROOT; };
 		776455012B70D7990092B895 /* DetailsFavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFavoriteViewModel.swift; sourceTree = "<group>"; };
 		776455032B70E4A00092B895 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		776455052B723DC20092B895 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		777C72482B6D99A000A86A5B /* NitrixMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NitrixMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		777C724B2B6D99A000A86A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		777C724D2B6D99A000A86A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				778ACF602B6E7BA4002536D0 /* NetworkConstants.swift */,
 				778ACF622B6E7CB7002536D0 /* APICaller.swift */,
 				778ACF662B6E7DB1002536D0 /* NetworkError.swift */,
+				776455052B723DC20092B895 /* EndPoint.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				776454E72B6FBE260092B895 /* DateFormatter+Extension.swift in Sources */,
 				777C72662B6D9C8600A86A5B /* FavoritesViewController.swift in Sources */,
 				776454DA2B6F8FB20092B895 /* MovieListCell.swift in Sources */,
+				776455062B723DC20092B895 /* EndPoint.swift in Sources */,
 				777C724E2B6D99A000A86A5B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

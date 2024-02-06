@@ -7,62 +7,54 @@
 
 import Foundation
 
-final class APICaller {
-    
-    typealias completionHandler = (_ result: Result<MovieModel,NetworkError>) -> Void
-    
-    static func getMovies(completionHandler: @escaping completionHandler) {
-        
-        let urlString = NetworkConstants.shared.serverAddress + "/discover/movie?api_key=" + NetworkConstants.shared.apiKey
+struct APICaller {
+    static func fetchData<T: Decodable>(from endpoint: EndPoint, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
+        let urlString = NetworkConstants.shared.serverAddress + endpoint.rawValue + NetworkConstants.shared.apiKey
         
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.urlError))
             return
         }
         
-        URLSession.shared.dataTask(with: url) { dataResponse, URLResponse, error in
+        URLSession.shared.dataTask(with: url) { dataResponse, _, error in
             DispatchQueue.main.async {
-                if error == nil,
-                   let data = dataResponse,
-                   let resultData = try? JSONDecoder().decode(MovieModel.self, from: data) {
+                if let error = error {
+                    completionHandler(.failure(.networkError(error)))
+                    return
+                }
+                
+                guard let data = dataResponse else {
+                    completionHandler(.failure(.noData))
+                    return
+                }
+                
+                do {
+                    let resultData = try JSONDecoder().decode(T.self, from: data)
                     completionHandler(.success(resultData))
-                } else {
-                    completionHandler(.failure(.canNotParseData))
+                } catch {
+                    completionHandler(.failure(.decodingError(error)))
                 }
             }
         }.resume()
     }
+}
+
+extension APICaller {
+    static func getMovies(completionHandler: @escaping (Result<MovieModel, NetworkError>) -> Void) {
+        fetchData(from: .movies, completionHandler: completionHandler)
+    }
     
     static func getGenreName(for genreIds: [Int], completion: @escaping ([String]?) -> Void) {
-           let urlString = NetworkConstants.shared.serverAddress + "/genre/movie/list?api_key=" + NetworkConstants.shared.apiKey
-           
-        guard let url = URL(string: urlString) else {
-             completion(nil)
-             return
-         }
-
-         URLSession.shared.dataTask(with: url) { (data, response, error) in
-             if let error = error {
-                 print("Error fetching genre data: \(error)")
-                 completion(nil)
-                 return
-             }
-
-             guard let data = data else {
-                 completion(nil)
-                 return
-             }
-
-             do {
-                 let movieGenres = try JSONDecoder().decode(MovieGenres.self, from: data)
-                 let genreNames = genreIds.compactMap { genreId in
-                     movieGenres.genres.first { $0.id == genreId }?.name
-                 }
-                 completion(genreNames)
-             } catch {
-                 print("Error decoding genre data: \(error)")
-                 completion(nil)
-             }
-         }.resume()
-       }
+        fetchData(from: .genres) { (result: Result<MovieGenres, NetworkError>) in
+            switch result {
+            case .success(let movieGenres):
+                let genreNames = genreIds.compactMap { genreId in
+                    movieGenres.genres.first { $0.id == genreId }?.name
+                }
+                completion(genreNames)
+            case .failure:
+                completion(nil)
+            }
+        }
+    }
 }
